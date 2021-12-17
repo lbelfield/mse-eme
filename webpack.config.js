@@ -26,15 +26,15 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.(mp4)$/,
@@ -43,16 +43,16 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/server/static/index.html', // creates html file in dist
       filename: './index.html',
     }),
-  ]
+  ],
 };
