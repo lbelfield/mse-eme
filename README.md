@@ -18,3 +18,7 @@ This is my futile attempt at building a player.
 - Read them off disk to begin with (Don't need a manifest)
 - Have a play with ffmpeg too
 to cut your big mp4 video into audio and video chunks, at different bitrates
+
+## Running:
+Express port on 8080
+webpack is on port 3000
