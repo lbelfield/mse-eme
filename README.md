@@ -5,6 +5,8 @@ The sector is historically between a rock (academia) and hard place (established
 
 This is my futile attempt at building a player.
 
+No tests... I know... get off my dick!
+
 ## Steps:
 
 - Starting with a basic video element and build a UI that reacts to the events and calls the APIs.
