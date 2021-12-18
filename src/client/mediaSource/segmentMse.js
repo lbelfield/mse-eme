@@ -2,14 +2,14 @@ const segmentMse = () => {
   const vidElement = document.querySelector('video');
 
   const initUrl = 'init.mp4';
-  const templateUrl = 'seg-$Number$.m4s';
+  const segmentTemplateUrl = 'seg-$Number$.m4s';
 
   // must get mime type right, bespoke to video
   const mime = 'video/mp4; codecs="avc1.4d401f"';
 
   let sourceBuffer;
-  let index = 1;
-  const numberOfChunks = 15;
+  let segmentIndex = 1;
+  const numberOfSegments = 15;
 
   if (!window.MediaSource) {
     console.error('The Media Source Extensions API is not supported.');
@@ -29,16 +29,22 @@ const segmentMse = () => {
     sourceBuffer = mediaSource.addSourceBuffer(mime);
     sourceBuffer.addEventListener('updateend', nextSegment);
 
+    // Add the initUrl to the buffer
     GET(initUrl, appendToBuffer);
 
     vidElement.play();
   }
 
+  // loop over each segment
   function nextSegment() {
-    const url = templateUrl.replace('$Number$', index);
+    const url = segmentTemplateUrl.replace('$Number$', segmentIndex);
+
+    // Add all the segments to the buffer
     GET(url, appendToBuffer);
-    index++;
-    if (index > numberOfChunks) {
+
+    segmentIndex++;
+
+    if (segmentIndex > numberOfSegments) {
       sourceBuffer.removeEventListener('updateend', nextSegment);
     }
   }

@@ -31,12 +31,12 @@ const mse = () => {
           return response.arrayBuffer();
         })
         .then(function(arrayBuffer) {
-          sourceBuffer.addEventListener('updateend', segment);
+          sourceBuffer.addEventListener('updateend', updateEnd);
           sourceBuffer.appendBuffer(arrayBuffer);
         });
   }
 
-  function segment(e) {
+  function updateEnd(e) {
     if (!sourceBuffer.updating && mediaSource.readyState === 'open') {
       mediaSource.endOfStream();
     }
