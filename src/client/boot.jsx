@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Homepage from './homepage';
-import mse from './mse';
+import Homepage from './components/homepage';
+import mse from './mediaSource/mse';
 
 const boot = () => {
   if (typeof window !== 'undefined') {
