@@ -17,7 +17,7 @@ module.exports = {
     maxAssetSize: 512000,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.mp4'],
+    extensions: ['.js', '.jsx', '.mp4', '.m4s'],
   },
   module: {
     rules: [
@@ -37,7 +37,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(mp4)$/,
+        test: /\.(mp4|m4s)$/,
         use: [
           {
             loader: 'file-loader',
