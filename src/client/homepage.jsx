@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Form from './form';
-import globe from '../assets/globe.mp4';
+import Video from './video';
 
 class Homepage extends Component {
   constructor() {
@@ -36,11 +36,7 @@ class Homepage extends Component {
         <Form placeholder="video" handleChange={this.handleChange.bind(this)} />
         <button onClick={this.handleClick.bind(this)}>Submit</button>
         <br/>
-        {/* Remove your controls attribute, then u can bring your own UI */}
-        {/* controls="controls autoplay" is meaningless i think */}
-        <video width="320" height="240" controls="controls autoplay">
-          <source src="./globe.mp4" type="video/mp4" />
-        </video>
+        <Video width="320" height="240" controls="controls autoplay" />
       </div>
     );
   }
