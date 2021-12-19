@@ -1,9 +1,5 @@
 import express from 'express';
 
-import apiUser from './api/users';
-import todoList from './routes/todoList';
-import login from './routes/login';
-
 const app = express();
 const { PORT_EXPRESS, URL } = process.env;
 const port = parseInt(PORT_EXPRESS, 10);
@@ -28,11 +24,8 @@ const onError = (error) => {
 };
 
 const expressServer = () => {
-  app.use('/', express.static(__dirname + '/static', {index: 'homepage.html'}));
+  app.use('/', express.static(__dirname + '/static', {index: 'index.html'}));
 
-  app.use('/api/users', apiUser);
-  app.use('/login', login);
-  app.use('/todo', todoList);
   app.use(express.static(__dirname + '/static'));
 
   app.use((error, req, res, next) => {
