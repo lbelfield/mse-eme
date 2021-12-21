@@ -8,6 +8,8 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 const { PORT_WEBPACK } = process.env;
 
 module.exports = {
+  context: path.resolve(__dirname, 'src'),
+  entry: './index.js',
   devServer: {
     port: PORT_WEBPACK,
   },
@@ -15,6 +17,9 @@ module.exports = {
     hints: false,
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
+  },
+  optimization: {
+    minimize: false,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.mp4', '.m4s'],
@@ -51,7 +56,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/server/static/index.html', // creates html file in dist
+      template: './server/static/index.html', // creates html file in dist
       filename: './index.html',
     }),
   ],

@@ -19,6 +19,8 @@ const mse = () => {
 
   const mediaSource = new MediaSource();
   vidElement.src = URL.createObjectURL(mediaSource);
+  // sourceopen =
+  // https://stackoverflow.com/questions/50053560/why-is-the-sourceopen-event-listener-being-executed-at-the-end-of-the-script
   mediaSource.addEventListener('sourceopen', sourceOpen);
 
   function sourceOpen(e) {
