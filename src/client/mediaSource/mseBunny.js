@@ -1,8 +1,12 @@
+// have to import here so that the video element has access to it
+import bunny from '../../assets/bunny/bunny';
+
 const mseBunny = () => {
   const vidElement = document.querySelector('video');
 
   // must get mime type right, bespoke to video
-  const videoUrl = 'bunny.mp4';
+  const baseUrl = '/assets/bunny/';
+  const videoUrl = baseUrl + 'bunny.mp4';
   const mime = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
   // const mime = ?????? HEVC or AAC in the section: Get info > More Dimensions >;
 

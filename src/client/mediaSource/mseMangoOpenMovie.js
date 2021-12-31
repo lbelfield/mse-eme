@@ -1,8 +1,30 @@
+// have to import here so that the video element has access to it
+import init from '../../assets/mangoOpenMovie/init.mp4';
+import seg from '../../assets/mangoOpenMovie/seg-1.m4s';
+import seg2 from '../../assets/mangoOpenMovie/seg-2.m4s';
+import seg3 from '../../assets/mangoOpenMovie/seg-3.m4s';
+import seg4 from '../../assets/mangoOpenMovie/seg-4.m4s';
+import seg5 from '../../assets/mangoOpenMovie/seg-5.m4s';
+import seg6 from '../../assets/mangoOpenMovie/seg-6.m4s';
+import seg7 from '../../assets/mangoOpenMovie/seg-7.m4s';
+import seg8 from '../../assets/mangoOpenMovie/seg-8.m4s';
+import seg9 from '../../assets/mangoOpenMovie/seg-9.m4s';
+import seg10 from '../../assets/mangoOpenMovie/seg-10.m4s';
+import seg11 from '../../assets/mangoOpenMovie/seg-11.m4s';
+import seg12 from '../../assets/mangoOpenMovie/seg-12.m4s';
+import seg13 from '../../assets/mangoOpenMovie/seg-13.m4s';
+import seg14 from '../../assets/mangoOpenMovie/seg-14.m4s';
+import seg15 from '../../assets/mangoOpenMovie/seg-15.m4s';
+
+// TODO: Configure Webpack for process.env
+
+// https://github.com/bitmovin/mse-demo/blob/main/index.html
 const mseMangoOpenMovie = () => {
   const vidElement = document.querySelector('video');
 
-  const initUrl = 'init.mp4';
-  const segmentTemplateUrl = 'seg-$Number$.m4s';
+  const baseUrl = '/assets/mangoOpenMovie/';
+  const initUrl = baseUrl + 'init.mp4';
+  const segmentTemplateUrl = baseUrl + 'seg-$Number$.m4s';
 
   // must get mime type right, bespoke to video
   const mime = 'video/mp4; codecs="avc1.4d401f"';
@@ -30,7 +52,7 @@ const mseMangoOpenMovie = () => {
     sourceBuffer.addEventListener('updateend', nextSegment);
 
     // Add the initUrl to the buffer
-    GET(initUrl, appendToBuffer);
+    xmlHttpRequestGet(initUrl, appendToBuffer);
 
     vidElement.play();
   }
@@ -40,7 +62,7 @@ const mseMangoOpenMovie = () => {
     const url = segmentTemplateUrl.replace('$Number$', segmentIndex);
 
     // Add all the segments to the buffer
-    GET(url, appendToBuffer);
+    xmlHttpRequestGet(url, appendToBuffer);
 
     segmentIndex++;
 
@@ -55,10 +77,12 @@ const mseMangoOpenMovie = () => {
     }
   }
 
-  function GET(url, callback) {
+  function xmlHttpRequestGet(url, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'arraybuffer';
+
+    console.log(xhr);
 
     xhr.onload = function(e) {
       if (xhr.status != 200) {
