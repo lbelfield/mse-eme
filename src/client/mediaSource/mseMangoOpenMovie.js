@@ -47,6 +47,9 @@ const mseMangoOpenMovie = () => {
   vidElement.src = window.URL.createObjectURL(mediaSource);
   mediaSource.addEventListener('sourceopen', sourceOpen);
 
+  // SEARCH IN MERCURY:
+  // videoElement.addEventListener('seeking', this.handleSeeking);
+
   function sourceOpen() {
     sourceBuffer = mediaSource.addSourceBuffer(mime);
     sourceBuffer.addEventListener('updateend', nextSegment);
@@ -57,7 +60,7 @@ const mseMangoOpenMovie = () => {
     vidElement.play();
   }
 
-  // loop over each segment
+  // loop over each segment in recursive fashion
   function nextSegment() {
     const url = segmentTemplateUrl.replace('$Number$', segmentIndex);
 
@@ -66,6 +69,8 @@ const mseMangoOpenMovie = () => {
 
     segmentIndex++;
 
+    // we added the eventListener updateend above, however
+    // we don't want to have it if we haven't finished looping over all the segments
     if (segmentIndex > numberOfSegments) {
       sourceBuffer.removeEventListener('updateend', nextSegment);
     }
