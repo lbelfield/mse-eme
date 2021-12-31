@@ -1,4 +1,4 @@
-const segmentMse = () => {
+const mseMangoOpenMovie = () => {
   const vidElement = document.querySelector('video');
 
   const initUrl = 'init.mp4';
@@ -72,4 +72,4 @@ const segmentMse = () => {
   }
 };
 
-export default segmentMse;
+export default mseMangoOpenMovie;

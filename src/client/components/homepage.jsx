@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 
 import Form from './form';
 import Video from './video';
-import mse from '../mediaSource/mse';
-import segmentMse from '../mediaSource/segmentMse';
+import mseBunny from '../mediaSource/mseBunny';
+import mseMangoOpenMovie from '../mediaSource/mseMangoOpenMovie';
+import mseOctoDevVideoAsahi from '../mediaSource/octoDevVideos/mseAsahi';
+import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/mseDaznWipe';
 
 class Homepage extends Component {
   constructor() {
@@ -23,8 +25,8 @@ class Homepage extends Component {
     });
   }
 
-  handleMseClick() {
-    mse();
+  handleMseBunnyClick() {
+    mseBunny();
     this.setState(() => {
       return {
         videoTitle: 'Bunny - playing...',
@@ -32,11 +34,29 @@ class Homepage extends Component {
     });
   }
 
-  handleSegmentMseClick() {
-    segmentMse();
+  handleMseMangoOpenMovieClick() {
+    mseMangoOpenMovie();
     this.setState(() => {
       return {
         videoTitle: 'Kuba Workshop - Mango... playing...',
+      };
+    });
+  }
+
+  handleMseOctoDevVideoAsahiClick() {
+    mseOctoDevVideoAsahi();
+    this.setState(() => {
+      return {
+        videoTitle: 'Asahi... playing...',
+      };
+    });
+  }
+
+  handleMseOctoDevVideoDaznWipeClick() {
+    mseOctoDevVideoDaznWipe();
+    this.setState(() => {
+      return {
+        videoTitle: 'DAZN Wipe... playing...',
       };
     });
   }
@@ -55,8 +75,10 @@ class Homepage extends Component {
       <div>
         <h2>{this.state.videoTitle}</h2>
         <br/>
-        <button onClick={this.handleMseClick.bind(this)}>Bunny</button>
-        <button onClick={this.handleSegmentMseClick.bind(this)}>Kuba Workshop - Mango</button>
+        <button onClick={this.handleMseBunnyClick.bind(this)}>Bunny</button>
+        <button onClick={this.handleMseMangoOpenMovieClick.bind(this)}>Kuba Workshop - Mango</button>
+        <button onClick={this.handleMseOctoDevVideoAsahiClick.bind(this)}>octo-dev-videos Ashai</button>
+        <button onClick={this.handleMseOctoDevVideoDaznWipeClick.bind(this)}>octo-dev-videos Dazn Wipe</button>
         <br/>
         <Video width="320" height="240" controls="controls autoplay" />
         <br/>
