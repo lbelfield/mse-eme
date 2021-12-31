@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // have to import here so that the video element has access to it
-import globe from '../../assets/globe';
 
-import bunny from '../../assets/bunny';
+import bunny from '../../assets/bunny/bunny';
 
 import init from '../../assets/mangoOpenMovie/init';
 import seg from '../../assets/mangoOpenMovie/seg-1.m4s';

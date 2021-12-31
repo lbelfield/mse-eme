@@ -30,7 +30,7 @@ The big boys have moved away from MSE. Eg Disney. Native players, make it the re
 
 - Build a basic player first that just loads mp4 files (has to be "big buck bunny" as per tradition) 
 
-`<video src="/path/to/file.mp4">`
+- `<video src="/path/to/file.mp4">`
 
 - then extend it with MSE and try loading video and audio segments into it
 - Read them off disk to begin with (Don't need a manifest)
@@ -57,7 +57,7 @@ requirements; toggle it based on bandwidth.
 - which is a bit more like how a real ABR player would work
 - you can then integrate fetch so that it downloads the segments on demand as needed
 
-- if you're using the fabric content off octo-dev
+- if you're using the fabric content off octo-dev: `dazn aws exec -p dazn-octo-dev aws s3 sync s3://fabric-test-media/ ./public-dir/`
 - then you'll find audio and video segments there for all bitrates
 
 - then you can get into bandwidth estimation on the fly
