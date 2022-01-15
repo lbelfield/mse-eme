@@ -1,6 +1,3 @@
-// have to import here so that the video element has access to it
-import bunny from '../../assets/bunny/bunny';
-
 const mseBunny = () => {
   const vidElement = document.querySelector('video');
 
@@ -21,7 +18,11 @@ const mseBunny = () => {
   }
 
   const mediaSource = new MediaSource();
+  // In HTML the <videoElement> gets manipulated by the MSE API.
+  // The video element has a src property. This line creates a fake URL for the in-memory file
+  // so that it can read the segment
   vidElement.src = URL.createObjectURL(mediaSource);
+
   // sourceopen =
   // https://stackoverflow.com/questions/50053560/why-is-the-sourceopen-event-listener-being-executed-at-the-end-of-the-script
   mediaSource.addEventListener('sourceopen', sourceOpen);

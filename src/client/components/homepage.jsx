@@ -8,6 +8,7 @@ import mseOctoDevVideoAsahi from '../mediaSource/octoDevVideos/mseAsahi';
 import mseOctoDevVideoAsahiAudio from '../mediaSource/octoDevVideos/mseAsahiAudio';
 import mseOctoDevVideoAsahiVideo from '../mediaSource/octoDevVideos/mseAsahiVideo';
 import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/mseDaznWipe';
+import data from '../../assets/data';
 
 class Homepage extends Component {
   constructor() {
@@ -95,9 +96,10 @@ class Homepage extends Component {
       <div>
         <h2>{this.state.videoTitle}</h2>
         <br/>
+        <button onClick={this.handleMseOctoDevVideoAsahiClick.bind(this)}>octo-dev-videos Ashai</button>
+        <br/>
         <button onClick={this.handleMseBunnyClick.bind(this)}>Bunny</button>
         <button onClick={this.handleMseMangoOpenMovieClick.bind(this)}>Kuba Workshop - Mango</button>
-        <button onClick={this.handleMseOctoDevVideoAsahiClick.bind(this)}>octo-dev-videos Ashai</button>
         <button onClick={this.handleMseOctoDevVideoAsahiVideoClick.bind(this)}>octo-dev-videos Ashai VIDEO</button>
         <button onClick={this.handleMseOctoDevVideoAsahiAudioClick.bind(this)}>octo-dev-videos Ashai AUDIO</button>
         <button onClick={this.handleMseOctoDevVideoDaznWipeClick.bind(this)}>octo-dev-videos Dazn Wipe</button>

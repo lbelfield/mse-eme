@@ -1,22 +1,4 @@
-// have to import here so that the video element has access to it
-import init from '../../assets/mangoOpenMovie/init.mp4';
-import seg from '../../assets/mangoOpenMovie/seg-1.m4s';
-import seg2 from '../../assets/mangoOpenMovie/seg-2.m4s';
-import seg3 from '../../assets/mangoOpenMovie/seg-3.m4s';
-import seg4 from '../../assets/mangoOpenMovie/seg-4.m4s';
-import seg5 from '../../assets/mangoOpenMovie/seg-5.m4s';
-import seg6 from '../../assets/mangoOpenMovie/seg-6.m4s';
-import seg7 from '../../assets/mangoOpenMovie/seg-7.m4s';
-import seg8 from '../../assets/mangoOpenMovie/seg-8.m4s';
-import seg9 from '../../assets/mangoOpenMovie/seg-9.m4s';
-import seg10 from '../../assets/mangoOpenMovie/seg-10.m4s';
-import seg11 from '../../assets/mangoOpenMovie/seg-11.m4s';
-import seg12 from '../../assets/mangoOpenMovie/seg-12.m4s';
-import seg13 from '../../assets/mangoOpenMovie/seg-13.m4s';
-import seg14 from '../../assets/mangoOpenMovie/seg-14.m4s';
-import seg15 from '../../assets/mangoOpenMovie/seg-15.m4s';
-
-// TODO: Configure Webpack for process.env
+// Most comments in this file
 
 // https://github.com/bitmovin/mse-demo/blob/main/index.html
 const mseMangoOpenMovie = () => {
@@ -44,7 +26,12 @@ const mseMangoOpenMovie = () => {
   }
 
   const mediaSource = new MediaSource();
+
+  // In HTML the <videoElement> gets manipulated by the MSE API.
+  // The video element has a src property. This line creates a fake URL for the in-memory file
+  // so that it can read the segment
   vidElement.src = window.URL.createObjectURL(mediaSource);
+
   mediaSource.addEventListener('sourceopen', sourceOpen);
 
   // SEARCH IN MERCURY:
@@ -76,9 +63,14 @@ const mseMangoOpenMovie = () => {
     }
   }
 
+  // Each video chunk (or video segment) is just a binary array.
+  // Segments get added to the buffer, so the buffer is just an array of binary-arrays.
+  // Chrome reads the array of binary-arrays.
   function appendToBuffer(videoChunk) {
     if (videoChunk) {
+      console.log('videoChunk', videoChunk);
       sourceBuffer.appendBuffer(new Uint8Array(videoChunk));
+      console.log('sourceBuffer', sourceBuffer);
     }
   }
 
@@ -87,13 +79,15 @@ const mseMangoOpenMovie = () => {
     xhr.open('GET', url);
     xhr.responseType = 'arraybuffer';
 
-    console.log(xhr);
+    console.log('url', url);
 
     xhr.onload = function(e) {
       if (xhr.status != 200) {
         console.warn('Unexpected status code ' + xhr.status + ' for ' + url);
         return false;
       }
+      // xhr.response = videoChunk. videoChunk is just a buffer (an Array)
+      console.log('xhr.response', xhr.response);
       callback(xhr.response);
     };
 

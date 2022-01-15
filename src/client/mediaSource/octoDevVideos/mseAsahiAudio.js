@@ -1,14 +1,3 @@
-// have to import here so that the video element has access to it
-import audioAsahiInit from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/init.mp4';
-import audioAsahi1 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/1.mp4';
-import audioAsahi2 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/2.mp4';
-import audioAsahi3 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/3.mp4';
-import audioAsahi4 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/4.mp4';
-import audioAsahi5 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/5.mp4';
-import audioAsahi6 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/6.mp4';
-import audioAsahi7 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/7.mp4';
-import audioAsahi8 from '../../../assets/octo-dev-videos/dash/ads/asahi/audio_127000/8.mp4';
-
 // TODO: Configure Webpack for process.env
 
 const mseAsahiAudio = () => {
