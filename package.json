@@ -24,7 +24,8 @@
     "http-errors": "^1.8.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-toggle-button": "^2.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
@@ -45,6 +46,6 @@
     "rimraf": "^3.0.2",
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^4.6.0"
+    "webpack-dev-server": "^4.7.3"
   }
 }

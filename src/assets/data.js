@@ -19,7 +19,26 @@ import videoAsahi_4113000_6 from './octo-dev-videos/dash/ads/asahi/video_4113000
 import videoAsahi_4113000_7 from './octo-dev-videos/dash/ads/asahi/video_4113000/7.mp4';
 import videoAsahi_4113000_8 from './octo-dev-videos/dash/ads/asahi/video_4113000/8.mp4';
 
-// have to import here so that the video element has access to it
+import audioAsahi_95000_Init from './octo-dev-videos/dash/ads/asahi/audio_95000/init.mp4';
+import audioAsahi_95000_1 from './octo-dev-videos/dash/ads/asahi/audio_95000/1.mp4';
+import audioAsahi_95000_2 from './octo-dev-videos/dash/ads/asahi/audio_95000/2.mp4';
+import audioAsahi_95000_3 from './octo-dev-videos/dash/ads/asahi/audio_95000/3.mp4';
+import audioAsahi_95000_4 from './octo-dev-videos/dash/ads/asahi/audio_95000/4.mp4';
+import audioAsahi_95000_5 from './octo-dev-videos/dash/ads/asahi/audio_95000/5.mp4';
+import audioAsahi_95000_6 from './octo-dev-videos/dash/ads/asahi/audio_95000/6.mp4';
+import audioAsahi_95000_7 from './octo-dev-videos/dash/ads/asahi/audio_95000/7.mp4';
+import audioAsahi_95000_8 from './octo-dev-videos/dash/ads/asahi/audio_95000/8.mp4';
+
+import videoAsahi_262000_Init from './octo-dev-videos/dash/ads/asahi/video_262000/init.mp4';
+import videoAsahi_262000_1 from './octo-dev-videos/dash/ads/asahi/video_262000/1.mp4';
+import videoAsahi_262000_2 from './octo-dev-videos/dash/ads/asahi/video_262000/2.mp4';
+import videoAsahi_262000_3 from './octo-dev-videos/dash/ads/asahi/video_262000/3.mp4';
+import videoAsahi_262000_4 from './octo-dev-videos/dash/ads/asahi/video_262000/4.mp4';
+import videoAsahi_262000_5 from './octo-dev-videos/dash/ads/asahi/video_262000/5.mp4';
+import videoAsahi_262000_6 from './octo-dev-videos/dash/ads/asahi/video_262000/6.mp4';
+import videoAsahi_262000_7 from './octo-dev-videos/dash/ads/asahi/video_262000/7.mp4';
+import videoAsahi_262000_8 from './octo-dev-videos/dash/ads/asahi/video_262000/8.mp4';
+
 import videoDaznWipe_4113000_Init from './octo-dev-videos/dash/ads/dazn-wipe/video_4113000/init.mp4';
 import videoDaznWipe_4113000_1 from './octo-dev-videos/dash/ads/dazn-wipe/video_4113000/1.mp4';
 import videoDaznWipe_4113000_2 from './octo-dev-videos/dash/ads/dazn-wipe/video_4113000/2.mp4';
@@ -30,7 +49,6 @@ import audioDaznWipe_127000_1 from './octo-dev-videos/dash/ads/dazn-wipe/audio_1
 import audioDaznWipe_127000_2 from './octo-dev-videos/dash/ads/dazn-wipe/audio_127000/2.mp4';
 import audioDaznWipe_127000_3 from './octo-dev-videos/dash/ads/dazn-wipe/audio_127000/3.mp4';
 
-// have to import here so that the video element has access to it
 import mangoOpenMovieInit from './mangoOpenMovie/init.mp4';
 import mangoOpenMovieSeg1 from './mangoOpenMovie/seg-1.m4s';
 import mangoOpenMovieSeg2 from './mangoOpenMovie/seg-2.m4s';
@@ -48,7 +66,6 @@ import mangoOpenMovieSeg13 from './mangoOpenMovie/seg-13.m4s';
 import mangoOpenMovieSeg14 from './mangoOpenMovie/seg-14.m4s';
 import mangoOpenMovieSeg15 from './mangoOpenMovie/seg-15.m4s';
 
-// have to import here so that the video element has access to it
 import bunny from './bunny/bunny.mp4';
 
 const data = () => {
@@ -90,6 +107,26 @@ const data = () => {
   audioAsahi_12700_6,
   audioAsahi_12700_7,
   audioAsahi_12700_8,
+
+  videoAsahi_262000_Init,
+  videoAsahi_262000_1,
+  videoAsahi_262000_2,
+  videoAsahi_262000_3,
+  videoAsahi_262000_4,
+  videoAsahi_262000_5,
+  videoAsahi_262000_6,
+  videoAsahi_262000_7,
+  videoAsahi_262000_8,
+
+  audioAsahi_95000_Init,
+  audioAsahi_95000_1,
+  audioAsahi_95000_2,
+  audioAsahi_95000_3,
+  audioAsahi_95000_4,
+  audioAsahi_95000_5,
+  audioAsahi_95000_6,
+  audioAsahi_95000_7,
+  audioAsahi_95000_8,
 
   videoDaznWipe_4113000_Init;
   videoDaznWipe_4113000_1;

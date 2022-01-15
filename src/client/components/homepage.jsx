@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import ToggleButton from 'react-toggle-button';
 
 import Form from './form';
 import Video from './video';
 import mseBunny from '../mediaSource/bunny';
 import mseMangoOpenMovie from '../mediaSource/mangoOpenMovie';
 import mseOctoDevVideoAsahi from '../mediaSource/octoDevVideos/asahi';
+import mseOctoDevVideoAbrAsahi from '../mediaSource/octoDevVideos/abrAsahi';
 import mseOctoDevVideoAsahiAudio from '../mediaSource/octoDevVideos/asahiAudio';
 import mseOctoDevVideoAsahiVideo from '../mediaSource/octoDevVideos/asahiVideo';
 import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/daznWipe';
@@ -17,6 +19,7 @@ class Homepage extends Component {
     this.state = {
       value: '',
       videoTitle: 'Click the buttons to choose the video',
+      toggleButtonValue: false,
     };
   }
 
@@ -51,6 +54,15 @@ class Homepage extends Component {
     this.setState(() => {
       return {
         videoTitle: 'Asahi... playing...',
+      };
+    });
+  }
+
+  handleMseOctoDevVideoAbrAsahiClick() {
+    mseOctoDevVideoAbrAsahi(this.state.toggleButtonValue);
+    this.setState(() => {
+      return {
+        videoTitle: 'ABR Asahi... playing...',
       };
     });
   }
@@ -91,10 +103,22 @@ class Homepage extends Component {
     });
   }
 
+  handleToggleButtonClick(toggleButtonValue) {
+    this.setState({
+      toggleButtonValue: !toggleButtonValue,
+    });
+  }
+
   render() {
     return (
       <div>
         <h2>{this.state.videoTitle}</h2>
+        <br/>
+        <button onClick={this.handleMseOctoDevVideoAbrAsahiClick.bind(this)}>octo-dev-videos ABR Ashai</button>
+        <ToggleButton
+          value={ this.state.toggleButtonValue || false }
+          onToggle={this.handleToggleButtonClick.bind(this)}
+        />
         <br/>
         <button onClick={this.handleMseOctoDevVideoAsahiClick.bind(this)}>octo-dev-videos Ashai</button>
         <br/>
