@@ -1,4 +1,4 @@
-const mseBunny = () => {
+const bunny = () => {
   const vidElement = document.querySelector('video');
 
   // must get mime type right, bespoke to video
@@ -49,4 +49,4 @@ const mseBunny = () => {
   }
 };
 
-export default mseBunny;
+export default bunny;

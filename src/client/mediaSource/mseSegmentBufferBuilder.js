@@ -1,24 +1,19 @@
-// have to import here so that the video element has access to it
-
-// TODO: Configure Webpack for process.env
-
-const mseAsahi = () => {
+// https://github.com/bitmovin/mse-demo/blob/main/index.html
+const mseSegmentBufferBuilder = (numberOfSegments, video, audio) => {
   const vidElement = document.querySelector('video');
 
-  const videoBaseUrl = '/assets/octo-dev-videos/dash/ads/asahi/video_4113000/';
-  const videoInitUrl = videoBaseUrl + 'init.mp4';
-  const videoSegmentTemplateUrl = videoBaseUrl + '$Number$.mp4';
-  const audioBaseUrl = '/assets/octo-dev-videos/dash/ads/asahi/audio_127000/';
-  const audioInitUrl = audioBaseUrl + 'init.mp4';
-  const audioSegmentTemplateUrl = audioBaseUrl + '$Number$.mp4';
-  const videoMime = 'video/mp4; codecs="avc1.42E01E"';
-  const audioMime = 'video/mp4; codecs="mp4a.40.2"';
+  const { videoInitUrl, videoSegmentTemplateUrl, videoMime } = video || {};
+  const { audioInitUrl, audioSegmentTemplateUrl, audioMime } = audio || {};
 
   let videoSourceBuffer;
   let audioSourceBuffer;
   let videoSegmentIndex = 1;
   let audioSegmentIndex = 1;
-  const numberOfSegments = 8;
+
+  if (!window.MediaSource) {
+    console.error('The Media Source Extensions API is not supported.');
+    return;
+  }
 
   const mediaSource = new MediaSource();
   // In HTML the <videoElement> gets manipulated by the MSE API.
@@ -26,22 +21,44 @@ const mseAsahi = () => {
   // so that it can read the segment
   vidElement.src = window.URL.createObjectURL(mediaSource);
 
-  mediaSource.addEventListener('sourceopen', sourceVideoOpen);
-  mediaSource.addEventListener('sourceopen', sourceAudioOpen);
+  if (video !== null) {
+    if (!MediaSource.isTypeSupported(videoMime)) {
+      console.error('MediaType is not supported');
+      return;
+    }
+
+    mediaSource.addEventListener('sourceopen', sourceVideoOpen);
+  };
+
+  if (audio !== null) {
+    if (!MediaSource.isTypeSupported(audioMime)) {
+      console.error('MediaType is not supported');
+      return;
+    }
+
+    mediaSource.addEventListener('sourceopen', sourceAudioOpen);
+  };
 
   mediaSource.addEventListener('error', function(e) {
     console.log('error', e);
   });
+
+  // SEARCH IN MERCURY:
+  // videoElement.addEventListener('seeking', this.handleSeeking);
 
   function sourceVideoOpen() {
     videoSourceBuffer = mediaSource.addSourceBuffer(videoMime);
     videoSourceBuffer.addEventListener('updateend', function nextSegment() {
       const videoUrl = videoSegmentTemplateUrl.replace('$Number$', videoSegmentIndex);
 
+      // Add the segments in the Urls to the buffer via callback
       xmlHttpRequestGet(videoUrl, appendToVideoBuffer);
 
+      // recursion
       videoSegmentIndex++;
 
+      // we added the eventListener updateend above, however
+      // we don't want to have it if we haven't finished looping over all the segments
       if (videoSegmentIndex > numberOfSegments) {
         console.log('videoSegment');
         videoSourceBuffer.removeEventListener('updateend', nextSegment);
@@ -67,12 +84,14 @@ const mseAsahi = () => {
       }
     });
 
-    // TODO: AAC MIME for Audio
     xmlHttpRequestGet(audioInitUrl, appendToAudioBuffer);
 
     vidElement.play();
   }
 
+  // Each video chunk (or video segment) is just a binary array.
+  // Segments get added to the buffer, so the buffer is just an array of binary-arrays.
+  // Chrome reads the array of binary-arrays.
   function appendToVideoBuffer(segmentChunk) {
     if (segmentChunk) {
       videoSourceBuffer.appendBuffer(new Uint8Array(segmentChunk));
@@ -96,6 +115,8 @@ const mseAsahi = () => {
         console.warn('Unexpected status code ' + xhr.status + ' for ' + url);
         return false;
       }
+      // xhr.response = videoChunk. videoChunk is just a buffer (an Array)
+      console.log('xhr.response', xhr.response);
       callback(xhr.response);
     };
 
@@ -103,4 +124,4 @@ const mseAsahi = () => {
   }
 };
 
-export default mseAsahi;
+export default mseSegmentBufferBuilder;

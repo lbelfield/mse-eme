@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 
 import Form from './form';
 import Video from './video';
-import mseBunny from '../mediaSource/mseBunny';
-import mseMangoOpenMovie from '../mediaSource/mseMangoOpenMovie';
-import mseOctoDevVideoAsahi from '../mediaSource/octoDevVideos/mseAsahi';
-import mseOctoDevVideoAsahiAudio from '../mediaSource/octoDevVideos/mseAsahiAudio';
-import mseOctoDevVideoAsahiVideo from '../mediaSource/octoDevVideos/mseAsahiVideo';
-import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/mseDaznWipe';
+import mseBunny from '../mediaSource/bunny';
+import mseMangoOpenMovie from '../mediaSource/mangoOpenMovie';
+import mseOctoDevVideoAsahi from '../mediaSource/octoDevVideos/asahi';
+import mseOctoDevVideoAsahiAudio from '../mediaSource/octoDevVideos/asahiAudio';
+import mseOctoDevVideoAsahiVideo from '../mediaSource/octoDevVideos/asahiVideo';
+import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/daznWipe';
 import data from '../../assets/data';
 
 class Homepage extends Component {
