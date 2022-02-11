@@ -5,7 +5,7 @@ The sector is historically between a rock (academia) and hard place (established
 
 This is my futile attempt at building a player.
 
-No tests... I know... get off my dick!
+No tests... I know...
 ## History:
 
 HTML 5 did a good job of replacing Flash, but didn't consider streaming. MSE considers streaming. It's an extension to the video element.
