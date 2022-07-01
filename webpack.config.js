@@ -9,7 +9,7 @@ const { PORT_WEBPACK } = process.env;
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  entry: ['regenerator-runtime/runtime.js', './index.js'],
   devServer: {
     port: PORT_WEBPACK,
   },
@@ -22,7 +22,7 @@ module.exports = {
     minimize: false,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.mp4', '.m4s'],
+    extensions: ['.js', '.jsx', '.mp4', '.m4s', '.mpd'],
   },
   module: {
     rules: [
@@ -42,7 +42,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(mp4|m4s)$/,
+        test: /\.(mp4|m4s|mpd)$/,
         use: [
           {
             loader: 'file-loader',

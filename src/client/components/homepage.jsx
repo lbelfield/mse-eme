@@ -3,14 +3,16 @@ import ToggleButton from 'react-toggle-button';
 
 import Form from './form';
 import Video from './video';
-import mseBunny from '../mediaSource/bunny';
-import mseMangoOpenMovie from '../mediaSource/mangoOpenMovie';
-import mseOctoDevVideoAsahi from '../mediaSource/octoDevVideos/asahi';
-import mseOctoDevVideoAbrAsahi from '../mediaSource/octoDevVideos/abrAsahi';
-import mseOctoDevVideoAsahiAudio from '../mediaSource/octoDevVideos/asahiAudio';
-import mseOctoDevVideoAsahiVideo from '../mediaSource/octoDevVideos/asahiVideo';
-import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/daznWipe';
+import mseBunny from '../mediaSource/hardcodedManifest/bunny';
+import mseMangoOpenMovie from '../mediaSource/hardcodedManifest/mangoOpenMovie';
+import mseOctoDevVideoAsahi from '../mediaSource/hardcodedManifest/octoDevVideos/asahi';
+import mseOctoDevVideoAbrAsahi from '../mediaSource/hardcodedManifest/octoDevVideos/abrAsahi';
+import mseOctoDevVideoAsahiAudio from '../mediaSource/hardcodedManifest/octoDevVideos/asahiAudio';
+import mseOctoDevVideoAsahiVideo from '../mediaSource/hardcodedManifest/octoDevVideos/asahiVideo';
+import mseOctoDevVideoDaznWipe from '../mediaSource/hardcodedManifest/octoDevVideos/daznWipe';
 import hardcodedManifest from '../../assets/hardcodedManifest';
+
+import asahiWithManifest from '../mediaSource/manifest/octoDevVideos/asahiWithManifest';
 
 class Homepage extends Component {
   constructor() {
@@ -94,6 +96,15 @@ class Homepage extends Component {
     });
   }
 
+  handleAsahiWithManifestClick() {
+    asahiWithManifest();
+    this.setState(() => {
+      return {
+        videoTitle: 'Asahi With Manifest... playing...',
+      };
+    });
+  }
+
   handleChange(event) {
     const { value } = event.target;
     this.setState(() => {
@@ -119,6 +130,8 @@ class Homepage extends Component {
           value={ this.state.toggleButtonValue || false }
           onToggle={this.handleToggleButtonClick.bind(this)}
         />
+        <br/>
+        <button onClick={this.handleAsahiWithManifestClick.bind(this)}>Asahi With Manifest</button>
         <br/>
         <button onClick={this.handleMseOctoDevVideoAsahiClick.bind(this)}>octo-dev-videos Ashai</button>
         <br/>
