@@ -10,7 +10,7 @@ import mseOctoDevVideoAbrAsahi from '../mediaSource/octoDevVideos/abrAsahi';
 import mseOctoDevVideoAsahiAudio from '../mediaSource/octoDevVideos/asahiAudio';
 import mseOctoDevVideoAsahiVideo from '../mediaSource/octoDevVideos/asahiVideo';
 import mseOctoDevVideoDaznWipe from '../mediaSource/octoDevVideos/daznWipe';
-import data from '../../assets/data';
+import hardcodedManifest from '../../assets/hardcodedManifest';
 
 class Homepage extends Component {
   constructor() {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 5 minute VOD test manifest (1.92s segments)-->
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd" profiles="urn:mpeg:dash:profile:isoff-live:2011" minBufferTime="PT2S" type="static" mediaPresentationDuration="PT300.0799865722656S">
+  <Period id="0">
+    <AdaptationSet id="0" contentType="video" maxWidth="1280" maxHeight="720" frameRate="12800/512" segmentAlignment="true" par="16:9">
+      <Representation id="0" bandwidth="2300000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <!-- timescale="12800" (ticks in a second). initialisation = init.mp4. media=placeholderThatIteratesOverArray(0-7). We have 8 .mp4s, with 1-7 being 1.92s and no.8 being XXXs -->
+        <SegmentTemplate timescale="12800" initialization="video_4113000/init.mp4" media="video_4113000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+          <!-- segments - t=start ,d=durationOfSegment , r=endofArray(repeat)-->
+          <!-- d/timescale = 1.92 -->
+            <S t="0" d="24576" r="7"/> 
+            <!-- 156 x 24576 = 3833856 (r x d = t)-->
+            <!-- Second Segment is 0.56s duration long-->
+            <S t="3833856" d="7168"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="1" contentType="audio" lang="en" segmentAlignment="true">
+      <Representation id="1" bandwidth="128000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" initialization="audio_128000/init.mp4" media="audio_128000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="92160" r="155"/>
+            <S t="14376960" d="23184"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>

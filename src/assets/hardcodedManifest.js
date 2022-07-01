@@ -68,7 +68,7 @@ import mangoOpenMovieSeg15 from './mangoOpenMovie/seg-15.m4s';
 
 import bunny from './bunny/bunny.mp4';
 
-const data = () => {
+const hardcodedManifest = () => {
   bunny;
 
   mangoOpenMovieInit;
@@ -138,4 +138,4 @@ const data = () => {
   audioDaznWipe_127000_3;
 };
 
-export default data;
+export default hardcodedManifest;
