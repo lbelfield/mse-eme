@@ -19,7 +19,7 @@ Two best files are:
 - `<Period>` = bunch of content/ads
     * `<AdaptationSet>` - Is contentType video or audio? If video, what are dimensions of the player, framerate, par (pixel aspect ratio)? If audio, language?
         * `<SegmentTemplate>` - 
-        * timescale="12800" (ticks in a second)
+        * timescale="12800" (ticks in a second) - Timescale units are per second. So 1 timescale to seconds is 0.000078125th of a second 
         * initialisation = path to init.mp4. 
         * media=placeholderThatIteratesOverArray(0-155).
             * `<SegmentTimeline>`
