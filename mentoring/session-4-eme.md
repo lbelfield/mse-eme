@@ -44,7 +44,7 @@ https://dashif.org/identifiers/content_protection/ This file has unique IDs call
 
 Each period has a license in it, in this case: `AAAARHBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAACQSEM+14rc77088h48lq4anRR8iEM+14rc77088h48lq4anRR8=`
 
-`pssh box` (base64 decoder) = encoded key. Also in the init segment. Either use init segment or manifest.
+`pssh box` (base64 decoder) = encoded key. Also in the init segment. Either use init segment or manifest. This is the part that starts off the conversation.
 
 
 </br><h3>Examples to play with:</h3>
