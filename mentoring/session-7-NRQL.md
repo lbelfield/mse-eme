@@ -7,6 +7,7 @@ It is good to start with the basic building blocks before jumping to the complex
 Two tables within DAZN - 
 - JavaScriptErrors - Fatal Errors, Silent errors, (hard)
 - PageActions - Not errors (msgs, events) (easy)
+- Total_Rekall_Summary - : bandwith, bitrates, 
 
 We share NR with all other teams. To filter to our project, we need to get our codebase. Everything lives in PWP, so: @dazn/pwp
 
@@ -187,3 +188,9 @@ SINCE '2022-10-23 07:41:00+0000'
 FACET playerType, adManagerProfile
 TIMESERIES UNTIL '2022-10-23 23:03:00+0000'
 ```
+
+<h2>RLIKE</h2>
+RLIKE is for regular expressions:
+RLIKE '[0-9]{5}' means only accept numbers with up to 5 digits
+
+https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/
