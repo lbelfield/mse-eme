@@ -12,7 +12,13 @@ yarn-error.log*
 lerna-debug.log*
 
 # static videos
-octo-dev-videos/dash/number
+octo-dev-videos/dash/number/cenc
+octo-dev-videos/dash/number/video_480000
+octo-dev-videos/dash/number/video_840000
+octo-dev-videos/dash/number/video_1500000
+octo-dev-videos/dash/number/video_3000000
+octo-dev-videos/dash/number/video_4400000
+octo-dev-videos/dash/number/video_6500000
 
 # build
 build
@@ -114,9 +120,3 @@ dist
 .vscode-test
 
 # End of https://www.toptal.com/developers/gitignore/api/node
-
-
-
-Locker
-Days off
-Tizen 3.0

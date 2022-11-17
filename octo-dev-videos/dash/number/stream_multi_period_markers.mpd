@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+68s multi-period VOD test manifest (based on stream_multi_period.mpd) with
+out-of-band Event markers at:
+- 5s  (content-0)
+- 10s (content-0)
+- 15s (content-0)
+- 28.8s (ad-0)
+- 33.8s (ad-1)
+- 43.8s (ad-1)
+- 48.8s (ad-1)
+- 53.8s (ad-1)
+- 63.8s (content-1)
+-->
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:scte35="http://www.scte.org/schemas/35/2016" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd" profiles="urn:mpeg:dash:profile:isoff-live:2011" minBufferTime="PT2S" type="static" mediaPresentationDuration="PT68S">
+  <Period id="content-0">
+    <EventStream schemeIdUri="urn:scte:scte35:2014:xml+bin" timescale="1000">
+      <Event presentationTime="5000" duration="0" id="content-0_0">
+        <Signal xmlns="http://www.scte.org/schemas/35/2016">
+          <Binary>/DAhAAAAAAAAAP/wEAUAAACIf+9/fgAg9YDAAAAAAABiJjIs</Binary>
+        </Signal>
+      </Event>
+      <Event presentationTime="10000" duration="3000" id="content-0_1">
+        <Signal xmlns="http://www.scte.org/schemas/35/2016">
+          <Binary>/DAhAAAAAAAAAP/wEAUAAACJf+9/fgAg9YDAAAAAAAC/KdNe</Binary>
+        </Signal>
+      </Event>
+      <Event presentationTime="15000" duration="5000" id="content-0_2">
+        <Signal xmlns="http://www.scte.org/schemas/35/2016">
+          <Binary>/DAhAAAAAAAAAP/wEAUAAACKf+9/fgAg9YDAAAAAAADc+O1/</Binary>
+        </Signal>
+      </Event>
+    </EventStream>
+    <AdaptationSet id="0" contentType="video" maxWidth="1280" maxHeight="720" frameRate="12800/512" segmentAlignment="true" par="16:9">
+      <Representation id="0" bandwidth="2300000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="video_2300000/init.mp4" media="video_2300000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="2" bandwidth="840000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <SegmentTemplate timescale="12800" initialization="video_840000/init.mp4" media="video_840000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="3" bandwidth="1500000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <SegmentTemplate timescale="12800" initialization="video_1500000/init.mp4" media="video_1500000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="4" bandwidth="480000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <SegmentTemplate timescale="12800" initialization="video_480000/init.mp4" media="video_480000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="5" bandwidth="288000" codecs="avc1.4d401e" mimeType="video/mp4" sar="1:1" width="480" height="270">
+        <SegmentTemplate timescale="12800" initialization="video_288000/init.mp4" media="video_288000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="6" bandwidth="3000000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="video_3000000/init.mp4" media="video_3000000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="7" bandwidth="4400000" codecs="avc1.4d4020" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="video_4400000/init.mp4" media="video_4400000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="8" bandwidth="8000000" codecs="avc1.4d4020" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="video_8000000/init.mp4" media="video_8000000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="9" bandwidth="6500000" codecs="avc1.4d4020" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="video_6500000/init.mp4" media="video_6500000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="24576" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="1" contentType="audio" lang="en" segmentAlignment="true">
+      <Representation id="1" bandwidth="128000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" initialization="audio_128000/init.mp4" media="audio_128000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="92160" r="14"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="ad-0" start="PT28.8S" duration="PT5S">
+    <EventStream timescale="1000" schemeIdUri="urn:scte:scte35:2013:xml">
+      <Event presentationTime="0" duration="4000" id="ad-0_0">
+        <scte35:SpliceInfoSection protocolVersion="0" ptsAdjustment="183003" tier="4095">
+          <scte35:TimeSignal>
+            <scte35:SpliceTime ptsTime="3442857000"/>
+          </scte35:TimeSignal>
+          <scte35:SegmentationDescriptor segmentationEventId="1414668" segmentationEventCancelIndicator="false" segmentationDuration="8100000">
+            <scte35:DeliveryRestrictions webDeliveryAllowedFlag="false" noRegionalBlackoutFlag="false" archiveAllowedFlag="false" deviceRestrictions="3"/>
+            <scte35:SegmentationUpid segmentationUpidType="12" segmentationUpidLength="2" segmentationTypeId="52" segmentNum="0" segmentsExpected="0">0100</scte35:SegmentationUpid>
+          </scte35:SegmentationDescriptor>
+        </scte35:SpliceInfoSection>
+      </Event>
+    </EventStream>
+    <AdaptationSet id="0" contentType="video" maxWidth="1280" maxHeight="720" frameRate="12800/512" segmentAlignment="true" par="16:9">
+      <Representation id="0" bandwidth="2256000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_2256000/init.mp4" media="../ads/dazn-wipe/video_2256000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="2" bandwidth="4113000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_4113000/init.mp4" media="../ads/dazn-wipe/video_4113000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="3" bandwidth="3083000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_3083000/init.mp4" media="../ads/dazn-wipe/video_3083000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="5" bandwidth="1225000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_1225000/init.mp4" media="../ads/dazn-wipe/video_1225000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="6" bandwidth="262000" codecs="avc1.4d401e" mimeType="video/mp4" sar="1:1" width="480" height="270">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_262000/init.mp4" media="../ads/dazn-wipe/video_262000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="7" bandwidth="362000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_362000/init.mp4" media="../ads/dazn-wipe/video_362000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="8" bandwidth="712000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <SegmentTemplate timescale="12800" initialization="../ads/dazn-wipe/video_712000/init.mp4" media="../ads/dazn-wipe/video_712000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="1"/>
+            <S t="51200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="1" contentType="audio">
+      <Representation id="1" bandwidth="127000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" initialization="../ads/dazn-wipe/audio_127000/init.mp4" media="../ads/dazn-wipe/audio_127000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="96256" r="1"/>
+            <S t="192512" d="48512"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="4" bandwidth="95000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" initialization="../ads/dazn-wipe/audio_95000/init.mp4" media="../ads/dazn-wipe/audio_95000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="96256" r="1"/>
+            <S t="192512" d="48512"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="ad-1" start="PT33.8S" duration="PT15S">
+    <EventStream schemeIdUri="urn:google:dai:2018" timescale="1000">
+      <Event presentationTime="0" duration="0" id="ad-1_0" messageData="google_7062384485913200798"/>
+      <Event presentationTime="10000" duration="5000" id="ad-1_1" messageData="google_lDQJ1ByFFiVCoYL96UN2ePqEkVlQqzCsaN9lGrj_DEU"/>
+      <Event presentationTime="15000" duration="3000" id="ad-1_2" messageData="google_JaPiPak5vM4rPiaT714BTDbWrxnonBNCNYjYMSBkqBI"/>
+      <Event presentationTime="20000" duration="5000" id="ad-1_3" messageData="google_1346954144161357209"/>
+    </EventStream>
+    <AdaptationSet id="0" contentType="video" maxWidth="1280" maxHeight="720" frameRate="12800/512" segmentAlignment="true" par="16:9">
+      <Representation id="0" bandwidth="3083000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_3083000/init.mp4" media="../ads/asahi/video_3083000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="1" bandwidth="4113000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_4113000/init.mp4" media="../ads/asahi/video_4113000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="2" bandwidth="2256000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_2256000/init.mp4" media="../ads/asahi/video_2256000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="5" bandwidth="1225000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_1225000/init.mp4" media="../ads/asahi/video_1225000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="6" bandwidth="362000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_362000/init.mp4" media="../ads/asahi/video_362000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="7" bandwidth="712000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_712000/init.mp4" media="../ads/asahi/video_712000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="8" bandwidth="262000" codecs="avc1.4d401e" mimeType="video/mp4" sar="1:1" width="480" height="270">
+        <SegmentTemplate timescale="12800" initialization="../ads/asahi/video_262000/init.mp4" media="../ads/asahi/video_262000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="25600" r="6"/>
+            <S t="179200" d="13824"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="1" contentType="audio" segmentAlignment="true">
+      <Representation id="3" bandwidth="127000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" initialization="../ads/asahi/audio_127000/init.mp4" media="../ads/asahi/audio_127000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="96256" r="2"/>
+            <S t="288768" d="95232"/>
+            <S t="384000" d="96256" r="2"/>
+            <S t="672768" d="47104"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="4" bandwidth="95000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" initialization="../ads/asahi/audio_95000/init.mp4" media="../ads/asahi/audio_95000/$Number$.mp4" startNumber="1">
+          <SegmentTimeline>
+            <S t="0" d="96256" r="2"/>
+            <S t="288768" d="95232"/>
+            <S t="384000" d="96256" r="2"/>
+            <S t="672768" d="47104"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="content-1" start="PT48.8S">
+    <EventStream timescale="1000" schemeIdUri="">
+      <Event presentationTime="15000" duration="0" id="content-1_0" messageData="google_7062384485913200798"/>
+    </EventStream>
+    <AdaptationSet id="0" contentType="video" maxWidth="1280" maxHeight="720" frameRate="12800/512" segmentAlignment="true" par="16:9">
+      <Representation id="0" bandwidth="2300000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_2300000/init.mp4" media="video_2300000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="2" bandwidth="840000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_840000/init.mp4" media="video_840000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="3" bandwidth="1500000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="960" height="540">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_1500000/init.mp4" media="video_1500000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="4" bandwidth="480000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="640" height="360">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_480000/init.mp4" media="video_480000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="5" bandwidth="288000" codecs="avc1.4d401e" mimeType="video/mp4" sar="1:1" width="480" height="270">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_288000/init.mp4" media="video_288000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="6" bandwidth="3000000" codecs="avc1.4d401f" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_3000000/init.mp4" media="video_3000000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="7" bandwidth="4400000" codecs="avc1.4d4020" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_4400000/init.mp4" media="video_4400000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="8" bandwidth="8000000" codecs="avc1.4d4020" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_8000000/init.mp4" media="video_8000000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+      <Representation id="9" bandwidth="6500000" codecs="avc1.4d4020" mimeType="video/mp4" sar="1:1" width="1280" height="720">
+        <SegmentTemplate timescale="12800" presentationTimeOffset="368640" initialization="video_6500000/init.mp4" media="video_6500000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="368640" d="24576" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet id="1" contentType="audio" lang="en" segmentAlignment="true">
+      <Representation id="1" bandwidth="128000" codecs="mp4a.40.2" mimeType="audio/mp4" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011" value="2"/>
+        <SegmentTemplate timescale="48000" presentationTimeOffset="1382400" initialization="audio_128000/init.mp4" media="audio_128000/$Number$.mp4" startNumber="16">
+          <SegmentTimeline>
+            <S t="1382400" d="92160" r="9"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
