@@ -7,7 +7,7 @@ It is good to start with the basic building blocks before jumping to the complex
 Two tables within DAZN - 
 - JavaScriptErrors - Fatal Errors, Silent errors, (hard)
 - PageActions - Not errors (msgs, events) (easy)
-- Total_Rekall_Summary - : bandwith, bitrates, 
+- Total_Rekall_Summary - : bandwith, bitrates, videostarttime, cirr
 
 We share NR with all other teams. To filter to our project, we need to get our codebase. Everything lives in Playback Web Player, so filter for events sent from @dazn/playback-web-player
 
@@ -227,3 +227,7 @@ FACET errorMessage, errorCode, adManagerProfile
 TIMESERIES
 SINCE 1 day ago
 ```
+
+
+- YoSpace issues. 
+- 
