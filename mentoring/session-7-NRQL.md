@@ -230,4 +230,19 @@ SINCE 1 day ago
 
 
 - YoSpace issues. 
-- 
+
+
+## End Of Stream
+
+Boss man query:
+
+```
+SELECT playingTime, timeSinceLoad, timeRemaining, currentTime, unixTimestamp, eventType(), actionName, errorCategory, code OR errorCode AS 'code/errorCode', cdn, rotationCount, cdnIndex, videoBufferDuration, audioBufferDuration, videoBitrate, audioBitrate, eventId, assetId, assetName, packageVersion, solutionVersion, manufacturer, deviceModel, drmType, playerType, activeSourceType, manifestUrl, playbackSources 
+FROM PageAction, JavaScriptError 
+WHERE packageName='@dazn/playback-web-player' AND viewerId = '1d83e5e6fb18' 
+LIMIT MAX 
+SINCE 1 days ago
+```
+
+Use Logs section above, with this RFC: https://github.com/getndazn/mercury/blob/master/rfc/rfc-002-end-of-event-marker-detection.md
+And then use the 23XXX code to diagnose where this is
